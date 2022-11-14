@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvSkillScoreValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSkillScore"
+        app:layout_constraintStart_toStartOf="@+id/spRound"
+        app:layout_constraintTop_toTopOf="@+id/tvSkillScore"
+        tools:text="150" />
+
+    <TextView
+        android:id="@+id/tvSkillScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Skill Score"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tvScore"
+        app:layout_constraintTop_toBottomOf="@+id/tvHandicap" />
+
+    <TextView
+        android:id="@+id/tvScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Score"
+        app:layout_constraintBottom_toTopOf="@+id/tvBowstyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.208"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/etScore"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/tvScore"
+        app:layout_constraintStart_toEndOf="@+id/tvScore"
+        app:layout_constraintTop_toTopOf="@+id/tvScore"
+        tools:text="100"
+        android:autofillHints="Enter Score" />
+
+    <TextView
+        android:id="@+id/tvBowstyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bowstyle"
+        app:layout_constraintBottom_toTopOf="@+id/tvRoundFamily"
+        app:layout_constraintEnd_toEndOf="@+id/tvScore"
+        app:layout_constraintTop_toBottomOf="@+id/tvScore" />
+
+    <Spinner
+        android:id="@+id/spBowstyle"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/tvBowstyle"
+        app:layout_constraintStart_toStartOf="@+id/etScore"
+        app:layout_constraintTop_toTopOf="@+id/tvBowstyle"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tvRoundFamily"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Round Family"
+        app:layout_constraintBottom_toTopOf="@+id/tvRound"
+        app:layout_constraintEnd_toEndOf="@+id/tvScore"
+        app:layout_constraintTop_toBottomOf="@+id/tvBowstyle" />
+
+    <Spinner
+        android:id="@+id/spRoundFamily"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tvRoundFamily"
+        app:layout_constraintStart_toStartOf="@+id/spBowstyle"
+        app:layout_constraintTop_toTopOf="@+id/tvRoundFamily" />
+
+    <TextView
+        android:id="@+id/tvRound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Round"
+        app:layout_constraintBottom_toTopOf="@+id/btnCalculateHandicap"
+        app:layout_constraintEnd_toEndOf="@+id/tvScore"
+        app:layout_constraintTop_toBottomOf="@+id/tvRoundFamily" />
+
+    <TextView
+        android:id="@+id/tvHandicap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Handicap"
+        app:layout_constraintBottom_toTopOf="@+id/tvSkillScore"
+        app:layout_constraintEnd_toEndOf="@+id/tvScore"
+        app:layout_constraintTop_toBottomOf="@+id/btnCalculateHandicap" />
+
+    <Spinner
+        android:id="@+id/spRound"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tvRound"
+        app:layout_constraintStart_toStartOf="@+id/spRoundFamily"
+        app:layout_constraintTop_toTopOf="@+id/tvRound" />
+
+    <TextView
+        android:id="@+id/tvHandicapValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tvHandicap"
+        app:layout_constraintStart_toStartOf="@+id/spRound"
+        app:layout_constraintTop_toTopOf="@+id/tvHandicap"
+        tools:text="150" />
+
+    <Button
+        android:id="@+id/btnCalculateHandicap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="HCButtonClick"
+        android:text="Calculate Handicap"
+        app:layout_constraintBottom_toTopOf="@+id/tvHandicap"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spRound" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
